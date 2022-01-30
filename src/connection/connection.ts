@@ -7,6 +7,11 @@ export const connectionAsyncDb = async () => {
     return await createConnection(dbConfig);
   } catch (error: any) {
     const { code, errno, sqlMessage, sqlState } = error;
-    console.log(`Code: ${code} - ${errno}\nMessage: ${sqlMessage}\nState: ${sqlState}`);
+
+    if (code) {
+      console.log(`Code: ${code} - ${errno}\nMessage: ${sqlMessage}\nState: ${sqlState}`);
+    } else {
+      console.log(error);
+    }
   }
 };

@@ -14,7 +14,7 @@ export const dbConfig = {
   port: PORT_DB,
   username: USERNAME_DB,
   password: PASSWORD_DB,
-  data_base: DATABASE_NAME,
-  entities: ['lib/models/**/*.js'],
-  synchronize: false,
+  database: DATABASE_NAME,
+  entities: ['dist/models/**/*.js'],
+  synchronize: true,
 } as ConnectionOptions;
