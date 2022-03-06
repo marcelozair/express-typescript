@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { tSiginCredentials, tSigupCredentials } from '../models/user/user.types';
-import { signinService } from '../service/auth.service';
+import { signinService, signupService } from '../service/auth.service';
 
 export const signinController = async (req: Request, res: Response) => {
   const userCredentials: tSiginCredentials = req.body;
@@ -11,7 +11,7 @@ export const signinController = async (req: Request, res: Response) => {
 
 export const signupController = async (req: Request, res: Response) => {
   const userCredentials: tSigupCredentials = req.body;
-  const userSignup = await signinService(userCredentials);
+  const userSignup = await signupService(userCredentials);
 
   return res.status(200).json(userSignup);
 };

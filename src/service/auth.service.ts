@@ -1,3 +1,4 @@
+import jwt from '../utils/jwt';
 import crypt from '../utils/bcrypt';
 import { getRepository } from 'typeorm';
 import { users } from '../models/user/User';
@@ -13,9 +14,10 @@ export const signinService = async (credentials: tSiginCredentials) => {
   const passwordValidate: boolean = await crypt.validate(password, user.password);
   if (!passwordValidate) throw new Error('La contraseña ingresa es incorrecta');
 
-  // create session token
+  const token = jwt.create({ id: user.id });
 
   return {
+    token,
     message: 'Has iniciado sessión correctamente',
   };
 };
@@ -37,11 +39,12 @@ export const signupService = async (credentials: tSigupCredentials) => {
     password: passwordHash,
     token: '',
   };
+  
+  const newStructure: tUser = userRepository.create(user);
+  const newUser = await userRepository.save(newStructure);
+  const token = jwt.create({ id: newUser.id });
 
-  const newUser: tUser = userRepository.create(user);
-  await userRepository.save(newUser);
-
-  return { message: 'Usuario creado correctamente' };
+  return { message: 'Usuario creado correctamente', token };
 };
 
 

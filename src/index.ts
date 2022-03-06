@@ -7,6 +7,7 @@ import routes from './routes';
 
 async function main() {
   const app = express();
+  const PORT = process.env.PORT || '4000';
 
   app.use(cors());
   app.use(morgan('dev'));
@@ -17,7 +18,8 @@ async function main() {
 
   app.use(routes);
 
-  app.listen(process.env.PORT);
+  console.log(`Server running in port http://localhost:${PORT}/`);
+  app.listen(PORT);
 }
 
 main();
