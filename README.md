@@ -1,4 +1,4 @@
-# Project N° 1
+# Express with typescript
 
 This project was created for will configure the API with express and typescript, also create the functionality of sessions with JWT
 
