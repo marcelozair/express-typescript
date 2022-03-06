@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
+    "clean": "sudo rm -rf node_modules",
     "serve:reload": "npm run lint && node dist/index.js",
     "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/index.ts",
-    "clean": "sudo rm -rf node_modules"
+    "start": "tsc-watch --onSuccess \"node dist/index.js\""
   },
   "author": "",
   "license": "ISC",
