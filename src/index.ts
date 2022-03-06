@@ -7,16 +7,16 @@ import routes from './routes';
 
 async function main() {
   const app = express();
-  
+
   app.use(cors());
   app.use(morgan('dev'));
   app.use(express.json());
-  
+
   const connection = await connectionAsyncDb();
   if (!connection) return;
-  
+
   app.use(routes);
-  
+
   app.listen(process.env.PORT);
 }
 
