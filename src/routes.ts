@@ -4,7 +4,7 @@ import routerAuth from './routes/auth.routes';
 const RouterApp = Router();
 
 RouterApp.get('/', (req: Request, res: Response) => {
-  return res.send('<h2>Hello my little friend</h2>');
+  return res.send('Hello my little friend');
 });
 
 RouterApp.use('/auth', routerAuth);
