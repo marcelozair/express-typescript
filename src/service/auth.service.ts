@@ -47,4 +47,11 @@ export const signupService = async (credentials: tSigupCredentials) => {
   return { message: 'Usuario creado correctamente', token };
 };
 
+export const forgotPasswordService = async (email: string) => {
+  const userRepository = getRepository(users);
+  const userExist = userRepository.findOne({ where: { email } });
 
+  if (!userExist) throw new Error('El correo ingresado no está registrado');
+
+  return {};
+};

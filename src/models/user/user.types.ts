@@ -9,6 +9,10 @@ export type tSigupCredentials = {
   password: string;
 }
 
+export type tForgotPassword = {
+  email: string;
+}
+
 export type tUserCreated = {
   name: string;
   email: string;
