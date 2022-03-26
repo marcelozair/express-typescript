@@ -3,8 +3,8 @@ import routerAuth from './routes/auth.routes';
 
 const RouterApp = Router();
 
-RouterApp.get('/', (req: Request, res: Response) => {
-  return res.send('Hello my little friend');
+RouterApp.get('/', async (req: Request, res: Response) => {
+  return res.send('Hello world');
 });
 
 RouterApp.use('/auth', routerAuth);

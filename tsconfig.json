@@ -13,5 +13,13 @@
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
-  }
+    "baseUrl": ".",
+    "paths": {
+      "@controller/*": ["./src/controller/*"],
+      "@service/*": ["./src/service/*"],
+      "@models/*": ["./src/models/*"],
+    },
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
