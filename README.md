@@ -1,4 +1,4 @@
-# Express with typescript
+# Blog Project
 
 This project was created for will configure the API with express and typescript, also create the functionality of sessions with JWT
 
