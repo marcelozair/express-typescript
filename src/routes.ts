@@ -4,7 +4,7 @@ import routerAuth from './routes/auth.routes';
 const RouterApp = Router();
 
 RouterApp.get('/', async (req: Request, res: Response) => {
-  return res.send('Hello world');
+  return res.json({ message: '¡Welcome my friend!'});
 });
 
 RouterApp.use('/auth', routerAuth);

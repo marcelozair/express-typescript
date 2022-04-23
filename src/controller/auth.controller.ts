@@ -4,16 +4,25 @@ import { tForgotPassword, tSiginCredentials, tSigupCredentials } from '../models
 
 export const signinController = async (req: Request, res: Response) => {
   const userCredentials: tSiginCredentials = req.body;
-  const userSignin = await signinService(userCredentials);
 
-  return res.status(200).json(userSignin);
+  try {
+    const userSignin = await signinService(userCredentials);
+    return res.status(200).json(userSignin);
+  } catch(error: any) {
+    return res.status(400).json({ message: error.message });
+  }
+
 };
 
 export const signupController = async (req: Request, res: Response) => {
   const userCredentials: tSigupCredentials = req.body;
-  const userSignup = await signupService(userCredentials);
-
+  try {
+    const userSignup = await signupService(userCredentials);
   return res.status(200).json(userSignup);
+  } catch(error: any) {
+    return res.status(400).json({ message: error.message });
+  }
+
 };
 
 export const forgotPasswordController = async (req: Request, res: Response) => {

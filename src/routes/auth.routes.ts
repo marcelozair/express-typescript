@@ -5,8 +5,8 @@ import { forgotPasswordController, signinController, signupController } from '..
 
 const router = Router();
 
-router.post('/sign-in', schemaValidation(validateSignin), signinController);
-router.post('/sign-up', schemaValidation(validateSignup), signupController);
+router.post('/signin', schemaValidation(validateSignin), signinController);
+router.post('/signup', schemaValidation(validateSignup), signupController);
 router.post('/forgot-password', schemaValidation(validateForgotPassword), forgotPasswordController);
 
 export default router;

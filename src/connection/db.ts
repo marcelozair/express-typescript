@@ -15,6 +15,6 @@ export const dbConfig = {
   username: USERNAME_DB,
   password: PASSWORD_DB,
   database: DATABASE_NAME,
-  entities: ['src/models/**/*.ts||js'],
+  entities: ['dist/models/**/*.js'],
   synchronize: true,
 } as ConnectionOptions;

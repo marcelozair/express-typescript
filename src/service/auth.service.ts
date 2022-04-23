@@ -26,7 +26,7 @@ export const signupService = async (credentials: tSigupCredentials) => {
   const userRepository = getRepository(users);
   const { email, password } = credentials;
 
-  const userExsit: tUser | undefined = await userRepository.findOne({ where: { email } });
+  const userExsit = await userRepository.findOne({ where: { email } });
 
   if (userExsit) {
     throw new Error('Este usuario ya se encuentra registrado');
