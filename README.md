@@ -1,6 +1,6 @@
 # Project Documentation
 
-This project was created for will configure the API with express and typescript, also create the functionality of sessions with JWT
+This project was created to configure the API with express and typescript, also create the functionality of sessions with JWT
 
 ## Installation
 
