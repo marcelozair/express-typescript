@@ -1,3 +1,4 @@
+import { User } from './../models/User';
 import { ConnectionOptions } from 'typeorm';
 
 const {
@@ -8,13 +9,13 @@ const {
   DATABASE_NAME,
 } = process.env;
 
-export const dbConfig = {
-  type: 'mysql',
+export const db = {
+  type: 'postgres',
   host: HOST_DB,
   port: PORT_DB,
   username: USERNAME_DB,
   password: PASSWORD_DB,
   database: DATABASE_NAME,
-  entities: ['dist/models/**/*.js'],
+  entities: [User],
   synchronize: true,
 } as ConnectionOptions;

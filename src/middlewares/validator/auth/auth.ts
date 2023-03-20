@@ -1,9 +1,10 @@
 import Ajv, { JSONSchemaType } from 'ajv';
-import { tForgotPassword, tSiginCredentials, tSigupCredentials } from '../../../models/user/user.types';
+import { NewUser } from 'src/types/user';
+import { AuthForgotPassowrd, AuthSignIn } from 'src/types/auth';
 
 const ajv = new Ajv();
 
-const schemaSignin: JSONSchemaType<tSiginCredentials> = {
+const schemaSignin: JSONSchemaType<AuthSignIn> = {
   type: 'object',
   properties: {
     email: { type: 'string' },
@@ -13,7 +14,7 @@ const schemaSignin: JSONSchemaType<tSiginCredentials> = {
   additionalProperties: false,
 };
 
-const schemaSignup: JSONSchemaType<tSigupCredentials> = {
+const schemaSignup: JSONSchemaType<NewUser> = {
   type: 'object',
   properties: {
     name: { type: 'string' },
@@ -24,7 +25,7 @@ const schemaSignup: JSONSchemaType<tSigupCredentials> = {
   additionalProperties: false,
 };
 
-const schemaForgotPassword: JSONSchemaType<tForgotPassword> = {
+const schemaForgotPassword: JSONSchemaType<AuthForgotPassowrd> = {
   type: 'object',
   properties: {
     email: { type: 'string' },
